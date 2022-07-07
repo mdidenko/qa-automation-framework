@@ -16,24 +16,24 @@
 - Text field
 
 ### Quick start
-1. Imports
+1. Get driver instance
 ```python
 from [framework].utils.browser.webdriver import WebDriverFactory, WebDriver
 from [framework].common.browser_name import BrowserName
-```
-2. Get driver instance
-```python
+
 browser = WebDriverFactory.get_browser([BrowserName.Chrome/BrowserName.Firefox])
 driver = WebDriver.get_driver()  # singleton
 ```
 
-3. One of element usage example
+2. One of element usage example
 ```python
-button = Button("Tab Button", (By.XPATH, "//button[@id='tabButton']"), 15))
+from [framework].utils.browser.elements import Button
+
+button = Button("Tab Button", (By.XPATH, "//button[@id='tabButton']"), 15)
 button.click()
 ```
 
-4. Graceful shutdown
+3. Graceful shutdown
 ```python
 WebDriver.quit()
 ```
