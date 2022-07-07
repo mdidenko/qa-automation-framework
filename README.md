@@ -21,15 +21,16 @@
 from [framework].utils.browser.webdriver import WebDriverFactory, WebDriver
 from [framework].common.browser_name import BrowserName
 ```
-2. Get driver instance (singleton)
+2. Get driver instance
 ```python
-driver = WebDriverFactory.get_browser([BrowserName.Chrome/Browser.Firefox]).get_driver()
+browser = WebDriverFactory.get_browser([BrowserName.Chrome/BrowserName.Firefox])
+driver = WebDriver.get_driver()  # singleton
 ```
 
 3. One of element usage example
 ```python
-    button = Button("Tab Button", (By.XPATH, "//button[@id='tabButton']"), 15))
-    button.click()
+button = Button("Tab Button", (By.XPATH, "//button[@id='tabButton']"), 15))
+button.click()
 ```
 
 4. Graceful shutdown
